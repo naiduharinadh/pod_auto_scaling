@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodewebapp
+spec:
+  selector:
+    matchLabels:
+      run: nodewebapp
+  template:
+    metadata:
+      labels:
+        run: nodewebapp
+    spec:
+      containers:
+      - name: nodewebapp
+        image: harinadh14/nodeapp:v1.0
+        ports:
+        - containerPort: 4623
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodewebapp
+  labels:
+    run: nodewebapp
+spec:
+  ports:
+  - port: 4623
+  selector:
+    run: nodewebapp
