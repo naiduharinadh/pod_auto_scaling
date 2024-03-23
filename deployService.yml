@@ -29,7 +29,9 @@ metadata:
   labels:
     run: nodewebapp
 spec:
+  type: LoadBalancer
   ports:
   - port: 4623
+    targetPort: 4623
   selector:
     run: nodewebapp
