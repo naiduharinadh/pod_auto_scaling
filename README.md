@@ -14,4 +14,6 @@ use autoscale by adding: <br />
 ` kubectl get hpa nodewebapp `
 
 Generate Load: <br />
-kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://nodewebapp:4623; done"
+` kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://nodewebapp:4623; done" ` <br />
+` kubectl run -i --tty load-generator2 --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://nodewebapp:4623; done" `<br />
+this above given url works fine , because of internal connectivity of the pods one with other --- Great featur of K8s.
