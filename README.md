@@ -19,4 +19,4 @@ Generate Load: <br />
 this above given url works fine , because of internal connectivity of the pods one with other --- Great featur of K8s.
 
 <br />
- ` kubectl delete deployment.apps/nodewebapp service/nodewebapp horizontalpodautoscaler.autoscaling/nodewebapp `to delete all one at a time.
+ ` kubectl delete deployment.apps/nodewebapp service/nodewebapp horizontalpodautoscaler.autoscaling/nodewebapp ` to delete all one at a time.
